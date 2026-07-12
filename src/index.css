@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0a0a14;
+  color: #fff;
+  font-family: 'Poppins', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
+}
+
+/* App background gradient */
+.app-bg {
+  background:
+    radial-gradient(120% 80% at 50% -10%, rgba(122, 82, 245, 0.28), transparent 60%),
+    radial-gradient(100% 60% at 100% 0%, rgba(56, 189, 248, 0.18), transparent 55%),
+    radial-gradient(80% 60% at 0% 100%, rgba(122, 82, 245, 0.12), transparent 55%),
+    #0a0a14;
+}
+
+/* Hide scrollbars but keep scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Glassmorphic card */
+.glass {
+  background: linear-gradient(180deg, rgba(31, 31, 56, 0.72), rgba(15, 15, 30, 0.72));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(90deg, #b39dff, #38bdf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Brand button */
+.btn-brand {
+  background: linear-gradient(90deg, #7a52f5, #0ea5e9);
+  color: #fff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+.btn-brand:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px -10px rgba(122, 82, 245, 0.6);
+}
+.btn-brand:active:not(:disabled) {
+  transform: translateY(0);
+}
+.btn-brand:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Range sliders */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #7a52f5, #0ea5e9);
+  outline: none;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #7a52f5;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+input[type='range']::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #7a52f5;
+  cursor: pointer;
+}
+
+/* Urdu text helper */
+.urdu {
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+  direction: rtl;
+  line-height: 2.1;
+}
+
+/* Shimmer skeleton */
+.shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.04) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s linear infinite;
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Safe area for iOS bottom bar */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
